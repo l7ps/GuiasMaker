@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar Guia Médica</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="signature_pad.umd.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gerar Guia Médica</h1>
+            <p>Preencha os dados para gerar a guia</p>
+        </header>
+        <form id="formGuia" class="form">
+            <div class="form-group">
+                <label for="clinicaSelecionada">Clínica</label>
+                <select id="clinicaSelecionada" required></select>
+            </div>
+            <div class="form-group">
+                <label for="medicoSelecionado">Médico</label>
+                <select id="medicoSelecionado" required></select>
+            </div>
+            <div class="form-group">
+                <label for="pacienteSelecionado">Paciente</label>
+                <select id="pacienteSelecionado" required></select>
+            </div>
+            <div class="form-group">
+                <label for="colaboradorSelecionado">Colaborador</label>
+                <select id="colaboradorSelecionado" required></select>
+            </div>
+            <div class="form-group">
+                <label for="dataAgendamento">Data de Agendamento</label>
+                <input type="date" id="dataAgendamento" required>
+            </div>
+            <div class="form-group">
+                <label for="horarioAgendamento">Horário</label>
+                <input type="time" id="horarioAgendamento" required>
+            </div>
+            <div class="form-group">
+                <label for="observacoes">Observações</label>
+                <textarea id="observacoes" placeholder="Digite as observações"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="assinatura">Assinatura Digital</label>
+                <canvas id="assinaturaCanvas" style="border: 1px solid #ccc;"></canvas>
+                <button type="button" onclick="limparAssinatura()" class="btn-cancel">Limpar Assinatura</button>
+            </div>
+            <button type="submit" class="btn-primary">Gerar Guia Médica</button>
+            <a href="index.html" class="btn-cancel">Cancelar</a>
+        </form>
+        <div id="guia" class="guia-section"></div>
+        <button onclick="imprimirGuia()" class="btn-primary">Imprimir Guia</button>
+        <button onclick="gerarPDF()" class="btn-primary">Gerar PDF</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

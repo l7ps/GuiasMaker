@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Médica - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Guia Médica</h1>
+            <p>Sistema de geração de guias médicas</p>
+        </header>
+        <nav class="dashboard">
+            <div class="card" onclick="location.href='cadastro-clinica.html'">
+                <i class="fas fa-hospital"></i>
+                <h2>Clínicas</h2>
+                <p>Cadastre e gerencie clínicas</p>
+            </div>
+            <div class="card" onclick="location.href='cadastro-medico.html'">
+                <i class="fas fa-user-md"></i>
+                <h2>Médicos</h2>
+                <p>Cadastre e gerencie médicos</p>
+            </div>
+            <div class="card" onclick="location.href='cadastro-paciente.html'">
+                <i class="fas fa-user-injured"></i>
+                <h2>Pacientes</h2>
+                <p>Cadastre e gerencie pacientes</p>
+            </div>
+            <div class="card" onclick="location.href='cadastro-colaborador.html'">
+                <i class="fas fa-signature"></i>
+                <h2>Colaboradores</h2>
+                <p>Cadastre e gerencie colaboradores</p>
+            </div>
+            <div class="card" onclick="location.href='gerar-guia.html'">
+                <i class="fas fa-file-medical"></i>
+                <h2>Gerar Guia</h2>
+                <p>Gere guias médicas</p>
+            </div>
+            <div class="card" onclick="location.href='backup-restore.html'">
+                <i class="fas fa-database"></i>
+                <h2>Backup</h2>
+                <p>Faça backup e restauração</p>
+            </div>
+        </nav>
+        <footer>
+            <p>Desenvolvido por <strong>Leticia Pereira</strong></p>
+        </footer>
+    </div>
+    <button id="themeToggle" class="theme-toggle">
+        <i class="fas fa-moon"></i> Tema Escuro
+    </button>
+
+    <!-- Modal de Edição -->
+    <div id="modalEdicao" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="tituloModal">Editar</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="formEdicao" class="form">
+                    <!-- Campos do formulário serão preenchidos dinamicamente -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-cancel" onclick="fecharModal()">Cancelar</button>
+                <button type="submit" form="formEdicao" class="btn-primary">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
